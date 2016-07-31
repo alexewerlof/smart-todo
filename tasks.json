@@ -1,7 +1,7 @@
 {
   "tasks": [
     {
-      "id": 0,
+      "id": 10,
       "prereq": [],
       "tags": [],
       "title": "Milk the cow",
@@ -16,7 +16,7 @@
     },
     {
       "id": 1,
-      "prereq": [1],
+      "prereq": [10],
       "tags": [],
       "title": "Have a glass of milk",
       "notes": "",

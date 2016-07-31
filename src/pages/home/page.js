@@ -24,7 +24,6 @@ class TaskList extends React.Component {
   }
 
   componentDidMount() {
-    console.log('mounted------------------', $.getJSON)
     $.getJSON('/tasks')
     .done(data => this.setState({tasks: data.tasks}))
     .fail(function(e) { console.dir(e); });
@@ -37,10 +36,20 @@ class TaskList extends React.Component {
           <button>Done</button>
           <button>Important</button>
         </div>
-        <ul>
-          <li>Task 1</li>
-          <li>Task 2</li>
-        </ul>
+        <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Prio</th>
+            <th>Urg</th>
+          </tr>
+        </thead>
+        <tbody>
+          {this.state.tasks.map(t => (<tr key={t.id}>
+            <td>{t.title}</td>
+          </tr>))}
+        </tbody>
+        </table>
         <p>{this.state.tasks.length} tasks</p>
       </div>
     )
