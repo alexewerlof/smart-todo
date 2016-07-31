@@ -74,9 +74,26 @@ class Task extends React.Component {
   render () {
     var data = this.props.data;
     return (<tr style={this.styles()}>
-      <td>{data.title}</td>
+      <td><TaskProgress progress={data.progress}/>{data.title}</td>
       <td>{data.prio}</td>
       <td>{data.urg}</td>
     </tr>);
   }
+}
+
+function TaskProgress (props) {
+  var bgStyle = {
+    width:'50px',
+    display: 'inline-block',
+    backgroundColor: '#ccc',
+    margin: '0.2em'
+  };
+  var fillStyle = {
+    backgroundColor: 'red',
+    width: props.progress * 100 + '%',
+    height: '0.5em'
+  };
+  return (<div style={bgStyle}>
+    <div style={fillStyle}></div>
+  </div>);
 }
