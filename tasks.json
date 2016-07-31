@@ -1,0 +1,46 @@
+{
+  "tasks": [
+    {
+      "id": 0,
+      "prereq": [],
+      "tags": [],
+      "title": "Milk the cow",
+      "notes": "",
+      "prio": 1,
+      "urg": true,
+      "canStartBy": "",
+      "shouldFinishBy": "",
+      "length": "",
+      "progress": 0,
+      "where": ""
+    },
+    {
+      "id": 1,
+      "prereq": [1],
+      "tags": [],
+      "title": "Have a glass of milk",
+      "notes": "",
+      "prio": 1,
+      "urg": true,
+      "canStartBy": "",
+      "shouldFinishBy": "",
+      "length": "",
+      "progress": 0,
+      "where": ""
+    },
+    {
+      "id": 2,
+      "prereq": [],
+      "tags": [],
+      "title": "Take the cows to the science park",
+      "notes": "Cows needs to have fun too",
+      "prio": 2,
+      "urg": false,
+      "canStartBy": "",
+      "shouldFinishBy": "",
+      "length": "",
+      "progress": 0,
+      "where": ""
+    }
+  ]
+}

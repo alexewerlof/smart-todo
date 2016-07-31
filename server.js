@@ -11,6 +11,10 @@ const app = express();
  *
  ************************************************************/
 
+ app.get('/tasks', (req, res) => {
+   res.sendFile(__dirname + '/tasks.json');
+ });
+
 // Serve application file depending on environment
 app.get('/app.js', (req, res) => {
   if (process.env.PRODUCTION) {
