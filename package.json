@@ -1,7 +1,7 @@
 {
-  "name": "ReactTaskList",
+  "name": "SmartTodo",
   "version": "0.1.0",
-  "description": "From essential react: A minimal skeleton for building testable React apps using Babel",
+  "description": "From essential react",
   "main": "src/main.js",
   "scripts": {
     "postinstall": "npm run build",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pheuter/essential-react.git"
+    "url": "https://github.com/userpixel/smart-todo.git"
   },
   "keywords": [
     "skeleton",
@@ -24,9 +24,9 @@
   "author": "Mark Fayngersh",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pheuter/essential-react/issues"
+    "url": "https://github.com/userpixel/smart-todo/issues"
   },
-  "homepage": "https://github.com/pheuter/essential-react",
+  "homepage": "https://github.com/userpixel/smart-todo",
   "devDependencies": {
     "autoprefixer": "^6.0.2",
     "ava": "^0.12.0",
