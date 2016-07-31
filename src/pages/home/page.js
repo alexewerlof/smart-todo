@@ -68,6 +68,9 @@ class Task extends React.Component {
     if (this.isDone()) {
       ret.textDecoration = 'line-through';
     }
+    if (this.props.data.urg) {
+      ret.fontWeight = 'bold'
+    }
     return ret;
   }
 
