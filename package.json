@@ -1,7 +1,7 @@
 {
-  "name": "essential-react",
-  "version": "0.5.0",
-  "description": "A minimal skeleton for building testable React apps using Babel",
+  "name": "ReactTaskList",
+  "version": "0.1.0",
+  "description": "From essential react: A minimal skeleton for building testable React apps using Babel",
   "main": "src/main.js",
   "scripts": {
     "postinstall": "npm run build",
