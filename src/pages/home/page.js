@@ -102,11 +102,18 @@ class Task extends React.Component {
       <td><TaskProgress progress={data.progress}/>{data.title}</td>
       <td>{data.prio}</td>
       <td><input type="checkbox" checked={this.state.urg} onChange={this.toggleUrge}/></td>
-      <td>s</td>
-      <td>e</td>
+      <td><input type="date" /></td>
+      <td><input type="date" /></td>
       <td>p</td>
-      <td>w</td>
-      <td>n</td>
+      <td>
+        <select>
+          <option></option>
+          <option>Home</option>
+          <option>Work</option>
+          <option>On the way</option>
+        </select>
+      </td>
+      <td><textarea /></td>
     </tr>);
   }
 }
