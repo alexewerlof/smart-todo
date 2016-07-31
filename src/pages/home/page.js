@@ -40,8 +40,13 @@ class TaskList extends React.Component {
         <thead>
           <tr>
             <th>Title</th>
-            <th>Prio</th>
+            <th title="Priority or importance">Prio</th>
             <th>Urg</th>
+            <th title="Earliest this task can start">Start</th>
+            <th title="Deadline">End</th>
+            <th title="Prerequesites of this task">Prereq</th>
+            <th title="Is this task bound to a particular location">Where</th>
+            <th>Notes</th>
           </tr>
         </thead>
         <tbody>
@@ -59,6 +64,23 @@ function classNameHelper (obj) {
 }
 
 class Task extends React.Component {
+
+  constructor () {
+    super();
+    this.state = {
+      urg: false
+    };
+    this.toggleUrge = this.toggleUrge.bind(this);
+  }
+
+  componentWillMount() {
+    this.setState({urg: this.props.data.urg});
+  }
+
+  toggleUrge () {
+    this.setState({urg: !this.state.urg});
+  }
+
   isDone () {
     return this.props.data.progress === 1;
   }
@@ -68,7 +90,7 @@ class Task extends React.Component {
     if (this.isDone()) {
       ret.textDecoration = 'line-through';
     }
-    if (this.props.data.urg) {
+    if (this.state.urg) {
       ret.fontWeight = 'bold'
     }
     return ret;
@@ -79,7 +101,12 @@ class Task extends React.Component {
     return (<tr style={this.styles()}>
       <td><TaskProgress progress={data.progress}/>{data.title}</td>
       <td>{data.prio}</td>
-      <td>{data.urg}</td>
+      <td><input type="checkbox" checked={this.state.urg} onChange={this.toggleUrge}/></td>
+      <td>s</td>
+      <td>e</td>
+      <td>p</td>
+      <td>w</td>
+      <td>n</td>
     </tr>);
   }
 }
