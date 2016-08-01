@@ -68,17 +68,24 @@ class Task extends React.Component {
   constructor () {
     super();
     this.state = {
-      urg: false
+      urg: false,
+      title: 'temporary title'
     };
     this.toggleUrge = this.toggleUrge.bind(this);
+    this.titleChanged = this.titleChanged.bind(this);
   }
 
   componentWillMount() {
     this.setState({urg: this.props.data.urg});
+    this.setState({title: this.props.data.title});
   }
 
-  toggleUrge () {
+  toggleUrge (e) {
     this.setState({urg: !this.state.urg});
+  }
+
+  titleChanged (e) {
+    this.setState({title: e.target.value});
   }
 
   isDone () {
@@ -99,12 +106,29 @@ class Task extends React.Component {
   render () {
     var data = this.props.data;
     return (<tr style={this.styles()}>
-      <td><TaskProgress progress={data.progress}/>{data.title}</td>
-      <td>{data.prio}</td>
-      <td><input type="checkbox" checked={this.state.urg} onChange={this.toggleUrge}/></td>
-      <td><input type="date" /></td>
-      <td><input type="date" /></td>
-      <td>p</td>
+      <td>
+        <TaskProgress progress={data.progress}/>
+        <input type="text" value={this.state.title} onChange={this.titleChanged}/>
+      </td>
+      <td>
+        <select value={data.prio}>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </td>
+      <td>
+        <input type="checkbox" checked={this.state.urg} onChange={this.toggleUrge}/>
+      </td>
+      <td>
+        <input type="date" />
+      </td>
+      <td>
+        <input type="date" />
+      </td>
+      <td>
+        p
+      </td>
       <td>
         <select>
           <option></option>
@@ -113,7 +137,7 @@ class Task extends React.Component {
           <option>On the way</option>
         </select>
       </td>
-      <td><textarea /></td>
+      <td><textarea defaultValue={this.props.data.notes}/></td>
     </tr>);
   }
 }
